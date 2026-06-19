@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Portfolio • DK Tech X | Our Projects</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-section">
+        <div class="logo-icon">
+          <img src="img/logo.png" alt="DK Tech X Logo" id="logoImage" onerror="handleLogoError()">
+          <span class="fallback-text" style="display: none;">DK</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">DK <span>Tech</span> X</span>
+          <span class="logo-tagline">Digital Excellence</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+            <li><a href="Social-Media.html">Social Media</a></li>
+            <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+            <li><a href="Content-writing.html">Content Writing</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ PORTFOLIO HERO ============ -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <span class="badge"><i class="fas fa-folder-open"></i> Our Portfolio</span>
+      <h1>Featured <span class="highlight">Projects</span></h1>
+      <p class="hero-sub">Explore our latest work across AI, cloud, web, and mobile — crafted with precision and innovation.</p>
+
+      <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">AI & ML</button>
+        <button class="filter-btn">Cloud</button>
+        <button class="filter-btn">Web Apps</button>
+        <button class="filter-btn">Cybersecurity</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS GRID ============ -->
+  <section class="portfolio-projects">
+    <div class="container">
+      <div class="portfolio-grid">
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-brain"></i></div>
+          <div class="project-info">
+            <span class="project-tag">AI & Machine Learning</span>
+            <h3>NexMind Analytics</h3>
+            <p>Predictive analytics platform processing 2M+ daily transactions for enterprise clients.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-cloud-upload-alt"></i></div>
+          <div class="project-info">
+            <span class="project-tag">Cloud Migration</span>
+            <h3>CloudFlex Infrastructure</h3>
+            <p>Zero-downtime migration for a fintech giant, reducing costs by 45%.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-shield-alt"></i></div>
+          <div class="project-info">
+            <span class="project-tag">Cybersecurity</span>
+            <h3>SecureShield Suite</h3>
+            <p>Advanced threat detection system deployed across 30+ global networks.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-code"></i></div>
+          <div class="project-info">
+            <span class="project-tag">Web Application</span>
+            <h3>HealthBridge Portal</h3>
+            <p>Telemedicine platform connecting 500k+ patients with doctors worldwide.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-robot"></i></div>
+          <div class="project-info">
+            <span class="project-tag">AI Automation</span>
+            <h3>AutoMate AI</h3>
+            <p>Intelligent process automation saving 200+ hours monthly for logistics firm.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-mobile-alt"></i></div>
+          <div class="project-info">
+            <span class="project-tag">Mobile App</span>
+            <h3>EcoTrack Sustainability</h3>
+            <p>Carbon footprint tracker used by 150+ corporates for ESG compliance.</p>
+            <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Have a <span class="highlight" style="background: linear-gradient(120deg, #fff 0%, #a5b4fc 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Project in Mind</span>?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem;">Let's turn your idea into a success story. Start a conversation with our team.</p>
+        <a href="#" class="btn-white"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+        <a href="#" class="btn-outline-white"><i class="fas fa-calendar"></i> Schedule a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3 style="font-size: 1.8rem; margin-bottom: 15px;">DK <span class="highlight">TECH</span> X</h3>
+          <p>Empowering the world with next-generation technology solutions. Innovation is our DNA, excellence is our standard.</p>
+        </div>
+        <div class="footer-links">
+          <h4 style="margin-bottom: 15px; color: white;">Quick Links</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Home</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">About Us</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Services</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 style="margin-bottom: 15px; color: white;">Services</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">AI & Machine Learning</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Cloud Solutions</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Cybersecurity</a></li>
+            <li style="margin-bottom: 10px;"><a href="#" style="color: #cbd5e1; text-decoration: none;">Web Development</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 style="margin-bottom: 15px; color: white;">Contact</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 10px;"><i class="fas fa-envelope"></i> hello@dktechx.com</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DK Tech X. All Rights Reserved. Made with <i class="fas fa-heart" style="color: #2563eb;"></i> by DK Tech X Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/portfolio.js"></script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019ed193126070c8a9bc52e4ef88f14b7a48/embed.js'>
+</script>
+</body>
+</html>

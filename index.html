@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Tech X | Digital Marketing & Web Development Agency</title>
+    <meta name="description" content="DK Tech X - Leading digital marketing & web development agency. SEO, Web Development, Social Media, PPC & more.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='50' y='65' text-anchor='middle' fill='%233b82f6' font-size='50' font-weight='bold'>DK</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Simple inline style to ensure logo image fits well -->
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="preloader-content">
+        <div class="preloader-spinner"></div>
+        <span>DK TECH X</span>
+    </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-inner">
+            <div class="top-left">
+                <a href="mailto:dktechx0gmail.com"><i class="fas fa-envelope"></i> dktechx0@gmail.com</a>
+                <a href="tel:+919528095030"><i class="fas fa-phone-alt"></i> +91 9528095030</a>
+            </div>
+            <div class="top-right">
+                <span><i class="fas fa-clock"></i> Mon-Sat: 9AM-7PM</span>
+                <div class="top-social">
+                    <a href="https://www.facebook.com/profile.php?id=61590606278719" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/DKTechX01" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/dk_tech_x/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="http://linkedin.com/in/dk-tech-x-10841b417/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@DKTechX-e6i" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <!-- Updated logo section: using img/logo.png instead of DK text -->
+                <div class="logo-icon" id="logoIconContainer">
+                    <img src="img/logo.png" alt="DK Tech X Logo" id="logoImage" onerror="handleLogoError()">
+                    <span class="fallback-text">DK</span>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">DK <span>Tech</span> X</span>
+                    <span class="logo-tagline">Digital Excellence</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+                        <li><a href="Social-Media.html">Social Media</a></li>
+                        <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+                        <li><a href="Content-writing.html">Content Writing</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn btn-primary">Get Free Quote <i class="fas fa-arrow-right"></i></a>
+                <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-bg">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+    </div>
+    <div class="container">
+        <div class="hero-wrapper">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span> #4 Digital Agency in Meerut
+                </div>
+                <h1 class="hero-title">We Build <span class="text-highlight">Digital Excellence</span> For Your Brand</h1>
+                <p class="hero-text">DK Tech X is a leading digital marketing & web development agency. We transform your ideas into powerful digital experiences.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary btn-lg">Get Started Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="demo.html" class="btn btn-outline btn-lg" id="watchDemo"><span class="play-btn"><i class="fas fa-play"></i></span> Watch Demo</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span><span class="stat-label">Projects Done</span></div>
+                    <div class="hero-stat"><span class="stat-number" data-target="14">0</span><span class="stat-suffix">+</span><span class="stat-label">Happy Clients</span></div>
+                    <div class="hero-stat"><span class="stat-number" data-target="2">0</span><span class="stat-suffix">+</span><span class="stat-label">Years Exp.</span></div>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop" alt="DK Tech X Team" class="hero-img">
+                    <div class="hero-floating-card card-1">
+                        <div class="floating-icon"><i class="fas fa-rocket"></i></div>
+                        <div><strong>+200%</strong><span>Traffic Growth</span></div>
+                    </div>
+                    <div class="hero-floating-card card-2">
+                        <div class="floating-icon"><i class="fas fa-code"></i></div>
+                        <div><strong>100+</strong><span>Websites Built</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+    <button class="video-close"><i class="fas fa-times"></i></button>
+    <iframe id="videoFrame" src="" allowfullscreen></iframe>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="about-section section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">About Us</span>
+            <h2 class="section-title">We Are A <span class="text-highlight">Creative Digital Agency</span></h2>
+            <p class="section-desc">Combining creativity, technology & strategy to deliver exceptional results.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=550&h=420&fit=crop" alt="About DK Tech X">
+                <div class="about-experience"><span class="exp-number">2+</span><span>Years of Excellence</span></div>
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <h3>We're On A Mission To <span class="text-highlight">Empower Businesses</span></h3>
+                <p>DK Tech X is a team of passionate designers, developers & marketers. We combine creative thinking with data-driven strategies.</p>
+                <div class="about-features">
+                    <div class="feature"><i class="fas fa-check-circle"></i><div><h4>Expert Team</h4><p>Certified professionals with 2+ years experience</p></div></div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><div><h4>Proven Results</h4><p>100+ successful projects delivered worldwide</p></div></div>
+                    <div class="feature"><i class="fas fa-check-circle"></i><div><h4>24/7 Support</h4><p>Round-the-clock dedicated customer support</p></div></div>
+                </div>
+                <a href="about.html" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section section-padding bg-light">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Our Services</span>
+            <h2 class="section-title">What We <span class="text-highlight">Offer</span></h2>
+            <p class="section-desc">Comprehensive digital solutions tailored to your business needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-globe"></i></div>
+                <h3>Web Development</h3>
+                <p>Custom websites built with latest technologies for optimal performance.</p>
+                <a href="web-development.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Digital Marketing</h3>
+                <p>Data-driven strategies to increase visibility & generate quality leads.</p>
+                <a href="digital-marketing.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-magnifying-glass"></i></div>
+                <h3>SEO Optimization</h3>
+                <p>Boost search rankings & drive organic traffic with proven SEO strategies.</p>
+                <a href="SEO-optimaization.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
+                <h3>Social Media</h3>
+                <p>Engage your audience with compelling social media campaigns & content.</p>
+                <a href="Social-Media.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fas fa-rectangle-ad"></i></div>
+                <h3>PPC Advertising</h3>
+                <p>Maximize ROI with targeted pay-per-click campaigns across platforms.</p>
+                <a href="PPC-advertising.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>Content Writing</h3>
+                <p>High-quality, SEO-optimized content that engages & converts visitors.</p>
+                <a href="Content-writing.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Our Process</span>
+            <h2 class="section-title">How We <span class="text-highlight">Work</span></h2>
+            <p class="section-desc">A streamlined approach to deliver outstanding results every time.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fas fa-comments"></i></div>
+                <h3>Discovery</h3>
+                <p>Understanding your goals & requirements.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h3>Strategy</h3>
+                <p>Creating a tailored plan & design.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="300">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fas fa-code"></i></div>
+                <h3>Development</h3>
+                <p>Building with latest technology.</p>
+            </div>
+            <div class="step" data-aos="fade-up" data-aos-delay="400">
+                <div class="step-number">04</div>
+                <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Launch</h3>
+                <p>Deploying & optimizing for growth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO SECTION -->
+<section id="portfolio" class="portfolio-section section-padding bg-light">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Portfolio</span>
+            <h2 class="section-title">Our <span class="text-highlight">Recent Works</span></h2>
+            <p class="section-desc">Showcasing projects that delivered exceptional results.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=350&fit=crop" alt="E-Commerce">
+                <div class="portfolio-overlay"><span>Web Development</span><h4>E-Commerce Platform</h4><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=500&h=350&fit=crop" alt="Marketing">
+                <div class="portfolio-overlay"><span>Digital Marketing</span><h4>Brand Campaign</h4><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=500&h=350&fit=crop" alt="SEO">
+                <div class="portfolio-overlay"><span>SEO Optimization</span><h4>#1 Ranking Achieved</h4><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&h=350&fit=crop" alt="Branding">
+                <div class="portfolio-overlay"><span>Branding</span><h4>Brand Identity</h4><a href="#"><i class="fas fa-arrow-right"></i></a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="testimonials-section section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Testimonials</span>
+            <h2 class="section-title">What Our <span class="text-highlight">Clients Say</span></h2>
+        </div>
+        <div class="testimonials-grid" data-aos="fade-up">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"DK Tech X transformed our online presence completely. Our traffic increased by 300% in 3 months!"</p>
+                <div class="testimonial-author"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client"><div><h4>Rajesh Kumar</h4><span>CEO, TechStart India</span></div></div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Their team built us an amazing e-commerce platform. Sales doubled within the first month!"</p>
+                <div class="testimonial-author"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client"><div><h4>Priya Sharma</h4><span>Founder, StyleKart</span></div></div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Professional, responsive, and incredibly talented. They delivered ROI beyond expectations!"</p>
+                <div class="testimonial-author"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client"><div><h4>Amit Patel</h4><span>Director, Global Solutions</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section id="pricing" class="pricing-section section-padding bg-light">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Pricing</span>
+            <h2 class="section-title">Choose Your <span class="text-highlight">Best Plan</span></h2>
+            <p class="section-desc">Flexible pricing designed to fit your business needs.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-header"><h3>Starter</h3><p>For small Website</p><div class="price">₹749<span>/mo</span></div></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> 1 Pages Website</li>
+                    <li><i class="fas fa-check"></i> Contact Section</li>
+                    <li><i class="fas fa-check"></i> Domain setup help</li>
+                    <li><i class="fas fa-check"></i> Google search Console setup</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+            </div>
+            <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
+                <div class="popular-badge">Most Popular</div>
+                <div class="pricing-header"><h3>Professional</h3><p>Business Website<div class="price">₹4,999<span>/mo</span></div></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> 5 Pages Website</li>
+                    <li><i class="fas fa-check"></i> Morden UI design</li>
+                    <li><i class="fas fa-check"></i> WhatsApp Integration</li>
+                    <li><i class="fas fa-check"></i> Contact form</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+            </div>
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="pricing-header"><h3>ULTIMATE</h3><p>Website Solutions</p><div class="price">₹34,999<span>/mo</span></div></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                    <li><i class="fas fa-check"></i> Premium SEO</li>
+                    <li><i class="fas fa-check"></i> Full Social Media Suite</li>
+                    <li><i class="fas fa-check"></i> Content Writing</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section section-padding">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-badge">Contact Us</span>
+            <h2 class="section-title">Get In <span class="text-highlight">Touch</span></h2>
+            <p class="section-desc">Ready to start your project? Contact us for a free consultation.</p>
+        </div>
+        <div class="contact-grid">
+            <form class="contact-form" id="contactForm" data-aos="fade-right">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="phone" placeholder="Phone Number">
+                    <select name="service"><option value="">Select Service</option><option>Web Development</option><option>Digital Marketing</option><option>SEO</option><option>Social Media</option><option>PPC</option></select>
+                </div>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div class="contact-info" data-aos="fade-left">
+                <div class="info-card"><div class="info-icon"><i class="fas fa-location-dot"></i></div><div><h4>Our Office</h4><p>123 Digital Street, Mumbai - 400001</p></div></div>
+                <div class="info-card"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email Us</h4><p>info@dktechx.com</p></div></div>
+                <div class="info-card"><div class="info-icon"><i class="fas fa-phone"></i></div><div><h4>Call Us</h4><p>+91 98765 43210</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col footer-about">
+                <div class="footer-logo"><span>DK <span>Tech</span> X</span></div>
+                <p>Leading digital marketing & web development agency committed to delivering excellence since 2017.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61590606278719"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/DKTechX01"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/dk_tech_x/"><i class="fab fa-instagram"></i></a>
+                    <a href="http://linkedin.com/in/dk-tech-x-10841b417/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor     ">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Services</h4><ul><li><a href="web-development.html">Web Development</a></li><li><a href="digital-marketing.html">Digital Marketing</a></li><li><a href="SEO-optimaization.html">SEO Optimization</a></li><li><a href="Social-Media.html">Social Media</a></li></ul></div>
+            <div class="footer-col"><h4>Newsletter</h4><p>Subscribe for latest updates.</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Enter your email" required><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 <strong>DK Tech X</strong>. All Rights Reserved.</p></div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src='https://cdn.jotfor.ms/agent/embedjs/019ed193126070c8a9bc52e4ef88f14b7a48/embed.js'>
+</script>
+</body>
+</html>

@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cloud Solutions • DK Tech X | Scalable Cloud Infrastructure</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ============ HEADER ============ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.05);
+    }
+
+    header:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #0f172a;
+      transition: all 0.3s ease;
+    }
+
+    .logo-section:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-section:hover .logo-icon {
+      transform: rotate(-5deg);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border-radius: 14px;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .fallback-text {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #2563eb;
+      background: #eef2ff;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.3px;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.2;
+      color: #0f172a;
+      transition: color 0.3s ease;
+    }
+
+    .logo-name span {
+      color: #2563eb;
+      transition: color 0.3s ease;
+    }
+
+    .logo-section:hover .logo-name span {
+      color: #1d4ed8;
+    }
+
+    .logo-tagline {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #64748b;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .logo-section:hover .logo-tagline {
+      color: #2563eb;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-weight: 500;
+      color: #334155;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover {
+      color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+      border-radius: 2px;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      padding: 8px 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 20;
+      border: 1px solid rgba(37, 99, 235, 0.08);
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 22px;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .dropdown-menu li a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #2563eb;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #f8fafc;
+      color: #2563eb;
+      padding-left: 30px;
+    }
+
+    .dropdown-menu li a:hover::before {
+      transform: scaleY(1);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-toggle:hover {
+      color: #2563eb;
+      transform: rotate(90deg);
+    }
+
+    /* ============ HERO SECTION ============ */
+    .cloud-hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f172a 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cloud-hero::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.25), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cloud-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: rgba(37, 99, 235, 0.2);
+      color: #93c5fd;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 24px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      animation: fadeInUp 0.6s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes floatCloud {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-25px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #60a5fa 0%, #a78bfa 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text .hero-sub {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    .hero-visual {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      animation: floatCloud 6s ease-in-out infinite;
+    }
+
+    .hero-cloud-icon {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(96, 165, 250, 0.2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: #93c5fd;
+      border: 2px solid rgba(96, 165, 250, 0.3);
+    }
+
+    /* ============ SECTION HEADER ============ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      margin: 0 auto 18px;
+      border-radius: 4px;
+    }
+
+    .section-subtitle {
+      color: #64748b;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ============ CLOUD SERVICES GRID ============ */
+    .cloud-services {
+      padding: 70px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f1f5f9;
+      animation: fadeInScale 0.8s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .service-icon {
+      width: 65px;
+      height: 65px;
+      background: #eef2ff;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #2563eb;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: #2563eb;
+      color: #ffffff;
+      transform: rotate(-5deg) scale(1.1);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ============ CLOUD PROVIDERS ============ */
+    .cloud-providers {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .providers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .provider-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.4s ease;
+      border: 1px solid #f1f5f9;
+      animation: fadeInScale 0.8s ease;
+    }
+
+    .provider-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .provider-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .provider-card h4 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .provider-card p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .aws-color { color: #ff9900; }
+    .azure-color { color: #0078d4; }
+    .gcp-color { color: #4285f4; }
+    .digitalocean-color { color: #0080ff; }
+
+    /* ============ MIGRATION PROCESS ============ */
+    .migration-process {
+      padding: 70px 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      animation: fadeInScale 0.8s ease;
+    }
+
+    .process-number {
+      width: 55px;
+      height: 55px;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 auto 16px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover .process-number {
+      background: #7c3aed;
+      transform: scale(1.15);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .process-step h4 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .process-step p {
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    /* ============ BENEFITS ============ */
+    .benefits-section {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.4s ease;
+      border: 1px solid #f1f5f9;
+      animation: fadeInScale 0.8s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+    }
+
+    .benefit-icon {
+      font-size: 2.2rem;
+      color: #2563eb;
+      margin-bottom: 14px;
+    }
+
+    .benefit-card h4 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    /* ============ PRICING ============ */
+    .pricing-section {
+      padding: 70px 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 34px 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f1f5f9;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid #2563eb;
+      transform: scale(1.05);
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .pricing-icon {
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin-bottom: 14px;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .price-amount {
+      font-size: 2.2rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .price-period {
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 18px 0;
+    }
+
+    .features-list li {
+      padding: 7px 0;
+      color: #475569;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features-list li i {
+      color: #2563eb;
+      font-size: 0.75rem;
+    }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary-pricing {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-primary-pricing:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-outline-pricing {
+      border: 2px solid #2563eb;
+      color: #2563eb;
+    }
+
+    .btn-outline-pricing:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-section {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 22px 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid #f1f5f9;
+    }
+
+    .faq-item:hover {
+      border-color: #2563eb;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.08);
+    }
+
+    .faq-question {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #0f172a;
+    }
+
+    .faq-answer {
+      margin-top: 12px;
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ============ CTA ============ */
+    .cta-section {
+      padding: 70px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      border-radius: 32px;
+      padding: 60px 45px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cta-box p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: #0f172a;
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-outline-white {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 34px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 8px;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-white:hover {
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer-about h3 {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-links h4 {
+      color: #ffffff;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: #2563eb;
+      padding-left: 6px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+    .footer-bottom i {
+      color: #2563eb;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .providers-grid,
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hero-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .services-grid,
+      .pricing-grid,
+      .providers-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-section">
+        <div class="logo-icon">
+          <img src="img/logo.png" alt="DK Tech X Logo" id="logoImage" onerror="handleLogoError()">
+          <span class="fallback-text" style="display: none;">DK</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">DK <span>Tech</span> X</span>
+          <span class="logo-tagline">Digital Excellence</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link active">Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+            <li><a href="Social-Media.html">Social Media</a></li>
+            <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+            <li><a href="Content-writing.html">Content Writing</a></li>
+            <li><a href="ai-machine-learning.html">AI & Machine Learning</a></li>
+            <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="cloud-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-badge"><i class="fas fa-cloud"></i> Cloud Solutions</span>
+          <h1>Scalable <span class="highlight">Cloud Infrastructure</span> for Growth</h1>
+          <p class="hero-sub">Migrate, optimize, and scale your business with our comprehensive cloud solutions. Achieve unmatched performance, security, and cost efficiency.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn-primary"><i class="fas fa-rocket"></i> Start Migration</a>
+            <a href="#" class="btn-outline"><i class="fas fa-headset"></i> Free Assessment</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-cloud-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOUD SERVICES ============ -->
+  <section class="cloud-services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our <span class="highlight">Cloud Services</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">End-to-end cloud solutions designed for performance, security, and scalability.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Cloud Migration</h3>
+          <p>Seamless migration of your applications, data, and infrastructure to the cloud with zero downtime guarantee.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-server"></i></div>
+          <h3>Cloud Infrastructure</h3>
+          <p>Design and deploy robust cloud architecture tailored to your business requirements and growth plans.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Cloud Security</h3>
+          <p>Enterprise-grade security solutions including firewalls, encryption, identity management, and compliance.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Cloud Monitoring</h3>
+          <p>24/7 monitoring, performance optimization, and proactive incident management for your cloud environment.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
+          <h3>Cloud Database</h3>
+          <p>Managed database services with automatic backups, scaling, and high availability across multiple regions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>DevOps & CI/CD</h3>
+          <p>Automated deployment pipelines, containerization, and infrastructure as code for faster delivery.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+          <h3>Disaster Recovery</h3>
+          <p>Comprehensive backup and disaster recovery solutions ensuring business continuity in any scenario.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Cost Optimization</h3>
+          <p>Analyze and optimize your cloud spending with intelligent resource management and reserved instances.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Hybrid Cloud</h3>
+          <p>Integrate on-premise infrastructure with public and private clouds for maximum flexibility and control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOUD PROVIDERS ============ -->
+  <section class="cloud-providers">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Cloud <span class="highlight">Platforms</span> We Support</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Expertise across all major cloud service providers.</p>
+      </div>
+      <div class="providers-grid">
+        <div class="provider-card">
+          <div class="provider-icon"><i class="fab fa-aws aws-color"></i></div>
+          <h4>Amazon Web Services</h4>
+          <p>EC2, S3, Lambda, RDS, EKS, CloudFront, and 200+ services</p>
+        </div>
+        <div class="provider-card">
+          <div class="provider-icon"><i class="fab fa-microsoft azure-color"></i></div>
+          <h4>Microsoft Azure</h4>
+          <p>Azure VMs, Functions, SQL Database, AKS, Active Directory</p>
+        </div>
+        <div class="provider-card">
+          <div class="provider-icon"><i class="fab fa-google gcp-color"></i></div>
+          <h4>Google Cloud Platform</h4>
+          <p>Compute Engine, Cloud Functions, BigQuery, GKE, Cloud Run</p>
+        </div>
+        <div class="provider-card">
+          <div class="provider-icon"><i class="fab fa-digital-ocean digitalocean-color"></i></div>
+          <h4>DigitalOcean</h4>
+          <p>Droplets, Kubernetes, App Platform, Managed Databases</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MIGRATION PROCESS ============ -->
+  <section class="migration-process">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Cloud <span class="highlight">Migration Process</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Our proven 5-step methodology for seamless cloud adoption.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <h4>Assess</h4>
+          <p>Evaluate existing infrastructure and create migration strategy</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <h4>Plan</h4>
+          <p>Design target architecture and detailed migration roadmap</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <h4>Migrate</h4>
+          <p>Execute migration with minimal disruption to operations</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <h4>Optimize</h4>
+          <p>Fine-tune performance, security, and cost efficiency</p>
+        </div>
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <h4>Manage</h4>
+          <p>Ongoing monitoring, support, and continuous improvement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why <span class="highlight">Cloud</span> Matters</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Key benefits of moving your business to the cloud.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h4>Cost Reduction</h4>
+          <p>Reduce infrastructure costs by up to 60% with pay-as-you-go pricing and optimized resource usage.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+          <h4>Scalability</h4>
+          <p>Auto-scale resources up or down based on demand, ensuring optimal performance at all times.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-lock"></i></div>
+          <h4>Enhanced Security</h4>
+          <p>Bank-level encryption, compliance certifications, and advanced threat protection built-in.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h4>High Performance</h4>
+          <p>Global CDN, low-latency networks, and SSD storage for lightning-fast application performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Cloud</span> Pricing Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Flexible plans for businesses at every stage of cloud adoption.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Starter Cloud</h3>
+          <p style="color:#64748b;font-size:0.85rem;margin-bottom:12px;">For small projects</p>
+          <div class="price-amount">$99<span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 50GB Storage</li>
+            <li><i class="fas fa-check"></i> 2 vCPUs</li>
+            <li><i class="fas fa-check"></i> 4GB RAM</li>
+            <li><i class="fas fa-check"></i> SSL Certificate</li>
+            <li><i class="fas fa-check"></i> Basic Monitoring</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <h3>Business Cloud</h3>
+          <p style="color:#64748b;font-size:0.85rem;margin-bottom:12px;">For growing businesses</p>
+          <div class="price-amount">$299<span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 200GB Storage</li>
+            <li><i class="fas fa-check"></i> 4 vCPUs</li>
+            <li><i class="fas fa-check"></i> 8GB RAM</li>
+            <li><i class="fas fa-check"></i> Auto Scaling</li>
+            <li><i class="fas fa-check"></i> Advanced Security</li>
+            <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-server"></i></div>
+          <h3>Enterprise Cloud</h3>
+          <p style="color:#64748b;font-size:0.85rem;margin-bottom:12px;">For large organizations</p>
+          <div class="price-amount">$799<span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1TB Storage</li>
+            <li><i class="fas fa-check"></i> 8 vCPUs</li>
+            <li><i class="fas fa-check"></i> 16GB RAM</li>
+            <li><i class="fas fa-check"></i> Load Balancing</li>
+            <li><i class="fas fa-check"></i> Disaster Recovery</li>
+            <li><i class="fas fa-check"></i> Dedicated Support</li>
+            <li><i class="fas fa-check"></i> Multi-Region</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-building"></i></div>
+          <h3>Custom Cloud</h3>
+          <p style="color:#64748b;font-size:0.85rem;margin-bottom:12px;">Tailored solutions</p>
+          <div class="price-amount">Custom<span class="price-period">/quote</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited Storage</li>
+            <li><i class="fas fa-check"></i> Custom vCPUs</li>
+            <li><i class="fas fa-check"></i> Custom RAM</li>
+            <li><i class="fas fa-check"></i> Hybrid Setup</li>
+            <li><i class="fas fa-check"></i> SLA Guarantee</li>
+            <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
+            <li><i class="fas fa-check"></i> Custom Architecture</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-outline-pricing">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently <span class="highlight">Asked Questions</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">How long does cloud migration take? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Migration timelines vary from 2-8 weeks depending on infrastructure complexity, data volume, and specific requirements.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is there downtime during migration? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We use zero-downtime migration strategies. Any required downtime is scheduled during off-peak hours with minimal impact.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Which cloud provider is best? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">The best provider depends on your specific needs. We assess your requirements and recommend the optimal platform.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do you ensure data security? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We implement encryption at rest and in transit, multi-factor authentication, regular security audits, and compliance checks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer managed services? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes! We offer fully managed cloud services including monitoring, maintenance, updates, and 24/7 technical support.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can you help reduce our cloud costs? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Absolutely. Our cost optimization service analyzes usage patterns and implements savings strategies, often reducing costs by 30-50%.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to <span class="highlight" style="background: linear-gradient(120deg, #ffffff 0%, #a5b4fc 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Move to Cloud</span>?</h2>
+        <p>Get a free cloud assessment and discover how much you can save while improving performance and security.</p>
+        <a href="#" class="btn-white"><i class="fas fa-cloud-upload-alt"></i> Start Cloud Migration</a>
+        <a href="#" class="btn-outline-white"><i class="fas fa-calendar"></i> Free Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>DK <span class="highlight">Tech</span> X</h3>
+          <p>Empowering the world with next-generation technology solutions. Innovation is our DNA, excellence is our standard.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Cloud Services</h4>
+          <ul>
+            <li><a href="#">Cloud Migration</a></li>
+            <li><a href="#">Cloud Infrastructure</a></li>
+            <li><a href="#">Cloud Security</a></li>
+            <li><a href="#">DevOps & CI/CD</a></li>
+            <li><a href="#">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> hello@dktechx.com</li>
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+            <li><i class="fas fa-globe"></i> www.dktechx.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DK Tech X. All Rights Reserved. Made with <i class="fas fa-heart"></i> by DK Tech X Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleLogoError() {
+      const img = document.getElementById('logoImage');
+      const fallback = document.querySelector('.fallback-text');
+      if (img) img.style.display = 'none';
+      if (fallback) fallback.style.display = 'flex';
+    }
+
+    const toggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        if (navMenu.style.display === 'flex') {
+          navMenu.style.display = 'none';
+        } else {
+          navMenu.style.display = 'flex';
+          navMenu.style.flexDirection = 'column';
+          navMenu.style.position = 'absolute';
+          navMenu.style.top = '72px';
+          navMenu.style.left = '0';
+          navMenu.style.width = '100%';
+          navMenu.style.background = '#ffffff';
+          navMenu.style.padding = '24px';
+          navMenu.style.boxShadow = '0 15px 30px rgba(0,0,0,0.08)';
+          navMenu.style.zIndex = '999';
+          navMenu.style.gap = '16px';
+        }
+      });
+    }
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.fa-chevron-down');
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          answer.style.display = 'block';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
+  </script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019ed193126070c8a9bc52e4ef88f14b7a48/embed.js'>
+</script>
+</body>
+</html>

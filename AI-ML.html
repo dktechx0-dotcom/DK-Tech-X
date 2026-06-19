@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AI & Machine Learning • DK Tech X | Intelligent Solutions</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ============ HEADER ============ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.05);
+    }
+
+    header:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #0f172a;
+      transition: all 0.3s ease;
+    }
+
+    .logo-section:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-section:hover .logo-icon {
+      transform: rotate(-5deg);
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border-radius: 14px;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .fallback-text {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #2563eb;
+      background: #eef2ff;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.3px;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.2;
+      color: #0f172a;
+      transition: color 0.3s ease;
+    }
+
+    .logo-name span {
+      color: #2563eb;
+      transition: color 0.3s ease;
+    }
+
+    .logo-section:hover .logo-name span {
+      color: #1d4ed8;
+    }
+
+    .logo-tagline {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #64748b;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .logo-section:hover .logo-tagline {
+      color: #2563eb;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-weight: 500;
+      color: #334155;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link:hover {
+      color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+      border-radius: 2px;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      background: #ffffff;
+      min-width: 220px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      padding: 8px 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 20;
+      border: 1px solid rgba(37, 99, 235, 0.08);
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 22px;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .dropdown-menu li a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: #2563eb;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #f8fafc;
+      color: #2563eb;
+      padding-left: 30px;
+    }
+
+    .dropdown-menu li a:hover::before {
+      transform: scaleY(1);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-toggle:hover {
+      color: #2563eb;
+      transform: rotate(90deg);
+    }
+
+    /* ============ HERO SECTION ============ */
+    .ai-hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.3), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .ai-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: rgba(37, 99, 235, 0.2);
+      color: #93c5fd;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 10px 24px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      animation: fadeInUp 0.6s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #60a5fa 0%, #a78bfa 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text .hero-sub {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    .hero-visual {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-ai-icon {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: #93c5fd;
+      border: 2px solid rgba(37, 99, 235, 0.3);
+    }
+
+    /* ============ SECTION HEADER ============ */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      margin: 0 auto 18px;
+      border-radius: 4px;
+    }
+
+    .section-subtitle {
+      color: #64748b;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ============ SERVICES GRID ============ */
+    .ai-services {
+      padding: 70px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f1f5f9;
+      animation: fadeInScale 0.8s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .service-icon {
+      width: 65px;
+      height: 65px;
+      background: #eef2ff;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #2563eb;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: #2563eb;
+      color: #ffffff;
+      transform: rotate(-5deg) scale(1.1);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ============ HOW IT WORKS ============ */
+    .how-it-works {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      position: relative;
+    }
+
+    .step-card {
+      text-align: center;
+      position: relative;
+      animation: fadeInScale 0.8s ease;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover .step-number {
+      background: #7c3aed;
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .step-card h4 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    /* ============ TECH STACK ============ */
+    .tech-stack {
+      padding: 70px 0;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .tech-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.4s ease;
+      border: 1px solid #f1f5f9;
+    }
+
+    .tech-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 35px rgba(37, 99, 235, 0.1);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .tech-item i {
+      font-size: 2.5rem;
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .tech-item span {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #334155;
+      display: block;
+    }
+
+    /* ============ PRICING ============ */
+    .pricing-section {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 38px 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f1f5f9;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid #2563eb;
+      transform: scale(1.05);
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.05) translateY(-10px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .pricing-icon {
+      font-size: 2rem;
+      color: #2563eb;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .price-period {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .features-list li {
+      padding: 8px 0;
+      color: #475569;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features-list li i {
+      color: #2563eb;
+    }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-pricing {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-primary-pricing:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-outline-pricing {
+      border: 2px solid #2563eb;
+      color: #2563eb;
+    }
+
+    .btn-outline-pricing:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    /* ============ CASE STUDIES ============ */
+    .case-studies {
+      padding: 70px 0;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .case-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s ease;
+      border: 1px solid #f1f5f9;
+    }
+
+    .case-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.1);
+    }
+
+    .case-img {
+      height: 180px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #60a5fa;
+    }
+
+    .case-info {
+      padding: 24px;
+    }
+
+    .case-info h4 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .case-info p {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .case-link {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-section {
+      padding: 70px 0;
+      background: #f8fafc;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 22px 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid #f1f5f9;
+    }
+
+    .faq-item:hover {
+      border-color: #2563eb;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.08);
+    }
+
+    .faq-question {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #0f172a;
+    }
+
+    .faq-answer {
+      margin-top: 12px;
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ============ CTA ============ */
+    .cta-section {
+      padding: 70px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      border-radius: 32px;
+      padding: 60px 45px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .cta-box p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+
+    .btn-white {
+      background: #ffffff;
+      color: #0f172a;
+      padding: 14px 34px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-outline-white {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 34px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 8px;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-white:hover {
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer-about h3 {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-links h4 {
+      color: #ffffff;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: #2563eb;
+      padding-left: 6px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+    .footer-bottom i {
+      color: #2563eb;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .services-grid,
+      .pricing-grid,
+      .case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hero-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .services-grid,
+      .pricing-grid,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-section">
+        <div class="logo-icon">
+          <img src="img/logo.png" alt="DK Tech X Logo" id="logoImage" onerror="handleLogoError()">
+          <span class="fallback-text" style="display: none;">DK</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">DK <span>Tech</span> X</span>
+          <span class="logo-tagline">Digital Excellence</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link active">Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+            <li><a href="Social-Media.html">Social Media</a></li>
+            <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+            <li><a href="Content-writing.html">Content Writing</a></li>
+            <li><a href="ai-machine-learning.html">AI & Machine Learning</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="ai-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-badge"><i class="fas fa-brain"></i> AI & Machine Learning</span>
+          <h1>Intelligent <span class="highlight">AI Solutions</span> for Modern Business</h1>
+          <p class="hero-sub">Harness the power of artificial intelligence and machine learning to automate processes, gain deep insights, and drive unprecedented growth for your organization.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn-primary"><i class="fas fa-rocket"></i> Get Started</a>
+            <a href="#" class="btn-outline"><i class="fas fa-play"></i> Watch Demo</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-ai-icon"><i class="fas fa-robot"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AI SERVICES ============ -->
+  <section class="ai-services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our <span class="highlight">AI & ML Services</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Comprehensive artificial intelligence solutions tailored to your business needs.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-brain"></i></div>
+          <h3>Machine Learning Models</h3>
+          <p>Custom ML models trained on your data to solve specific business problems with high accuracy and efficiency.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-language"></i></div>
+          <h3>Natural Language Processing</h3>
+          <p>Advanced NLP solutions for sentiment analysis, chatbots, text classification, and language understanding.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-eye"></i></div>
+          <h3>Computer Vision</h3>
+          <p>Image recognition, object detection, facial recognition, and visual inspection systems for various industries.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Predictive Analytics</h3>
+          <p>Forecast trends, customer behavior, and business outcomes using advanced predictive modeling techniques.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
+          <h3>AI Automation</h3>
+          <p>Intelligent process automation to streamline operations, reduce costs, and improve accuracy across workflows.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
+          <h3>Data Analytics & BI</h3>
+          <p>Transform raw data into actionable insights with AI-powered business intelligence and analytics solutions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-microphone"></i></div>
+          <h3>Speech Recognition</h3>
+          <p>Voice-enabled applications, transcription services, and audio analysis for enhanced user experiences.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>AI Security Solutions</h3>
+          <p>AI-driven threat detection, anomaly identification, and cybersecurity solutions to protect your digital assets.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-user-gear"></i></div>
+          <h3>Recommendation Engines</h3>
+          <p>Personalized recommendation systems that boost user engagement, sales, and customer satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How <span class="highlight">We Work</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Our proven methodology for delivering successful AI solutions.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Discovery</h4>
+          <p>We analyze your business needs, data landscape, and objectives to define the AI strategy.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Data Preparation</h4>
+          <p>Collect, clean, and prepare your data for training robust machine learning models.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Model Development</h4>
+          <p>Build, train, and validate custom AI models tailored to your specific requirements.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Deployment & Support</h4>
+          <p>Deploy models into production and provide ongoing monitoring, optimization, and support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH STACK ============ -->
+  <section class="tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our <span class="highlight">Tech Stack</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Cutting-edge technologies powering our AI solutions.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+        <div class="tech-item"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+        <div class="tech-item"><i class="fas fa-fire"></i><span>PyTorch</span></div>
+        <div class="tech-item"><i class="fas fa-code"></i><span>Scikit-learn</span></div>
+        <div class="tech-item"><i class="fas fa-cloud"></i><span>AWS SageMaker</span></div>
+        <div class="tech-item"><i class="fas fa-robot"></i><span>OpenAI</span></div>
+        <div class="tech-item"><i class="fas fa-database"></i><span>Apache Spark</span></div>
+        <div class="tech-item"><i class="fas fa-chart-bar"></i><span>Tableau</span></div>
+        <div class="tech-item"><i class="fas fa-server"></i><span>Google Cloud AI</span></div>
+        <div class="tech-item"><i class="fas fa-microchip"></i><span>Azure AI</span></div>
+        <div class="tech-item"><i class="fas fa-cubes"></i><span>Keras</span></div>
+        <div class="tech-item"><i class="fas fa-network-wired"></i><span>MLflow</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">AI & ML</span> Pricing</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Flexible plans designed for businesses of all sizes.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-robot"></i></div>
+          <h3>Starter AI</h3>
+          <p style="color:#64748b;margin-bottom:16px;">For small businesses</p>
+          <div class="price-amount">$999<span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Basic ML Model</li>
+            <li><i class="fas fa-check"></i> Data Analysis</li>
+            <li><i class="fas fa-check"></i> API Integration</li>
+            <li><i class="fas fa-check"></i> 1 Month Support</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-brain"></i></div>
+          <h3>Professional AI</h3>
+          <p style="color:#64748b;margin-bottom:16px;">For growing companies</p>
+          <div class="price-amount">$2,999<span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Advanced ML Models</li>
+            <li><i class="fas fa-check"></i> NLP / Computer Vision</li>
+            <li><i class="fas fa-check"></i> Custom Dashboard</li>
+            <li><i class="fas fa-check"></i> 3 Months Support</li>
+            <li><i class="fas fa-check"></i> Model Optimization</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Enterprise AI</h3>
+          <p style="color:#64748b;margin-bottom:16px;">For large organizations</p>
+          <div class="price-amount">$7,999<span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Full AI Suite</li>
+            <li><i class="fas fa-check"></i> Custom AI Architecture</li>
+            <li><i class="fas fa-check"></i> Real-time Analytics</li>
+            <li><i class="fas fa-check"></i> 6 Months Support</li>
+            <li><i class="fas fa-check"></i> Dedicated AI Team</li>
+            <li><i class="fas fa-check"></i> Priority Updates</li>
+          </ul>
+          <a href="#" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES ============ -->
+  <section class="case-studies">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Case Studies</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Real-world AI success stories from our clients.</p>
+      </div>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-img"><i class="fas fa-chart-line"></i></div>
+          <div class="case-info">
+            <h4>Predictive Sales Forecasting</h4>
+            <p>Built ML model achieving 94% accuracy in sales predictions for a retail giant.</p>
+            <a href="#" class="case-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-img"><i class="fas fa-comments"></i></div>
+          <div class="case-info">
+            <h4>AI Customer Support Chatbot</h4>
+            <p>Deployed NLP chatbot handling 50,000+ queries monthly with 92% satisfaction rate.</p>
+            <a href="#" class="case-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-img"><i class="fas fa-camera"></i></div>
+          <div class="case-info">
+            <h4>Quality Inspection System</h4>
+            <p>Computer vision system detecting defects with 99.7% accuracy in manufacturing.</p>
+            <a href="#" class="case-link">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently <span class="highlight">Asked Questions</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">What is machine learning? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Machine learning is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does an AI project take? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Typical AI projects range from 4-12 weeks depending on complexity, data availability, and specific requirements.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you provide post-deployment support? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes! All our plans include post-deployment support and monitoring to ensure optimal model performance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What data do you need from us? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We work with your existing data. Our team helps assess data quality and can assist with data collection if needed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is my data secure? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Absolutely. We follow enterprise-grade security protocols and sign NDAs to ensure your data remains confidential.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can you integrate with our existing systems? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes, we build APIs and integration layers to seamlessly connect AI solutions with your existing infrastructure.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to <span class="highlight" style="background: linear-gradient(120deg, #ffffff 0%, #a5b4fc 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Transform with AI</span>?</h2>
+        <p>Let's discuss how artificial intelligence can revolutionize your business. Schedule a free consultation today.</p>
+        <a href="#" class="btn-white"><i class="fas fa-paper-plane"></i> Start Your AI Project</a>
+        <a href="#" class="btn-outline-white"><i class="fas fa-calendar"></i> Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>DK <span class="highlight">Tech</span> X</h3>
+          <p>Empowering the world with next-generation technology solutions. Innovation is our DNA, excellence is our standard.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>AI Services</h4>
+          <ul>
+            <li><a href="#">Machine Learning</a></li>
+            <li><a href="#">Natural Language Processing</a></li>
+            <li><a href="#">Computer Vision</a></li>
+            <li><a href="#">Predictive Analytics</a></li>
+            <li><a href="#">AI Automation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> hello@dktechx.com</li>
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+            <li><i class="fas fa-globe"></i> www.dktechx.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DK Tech X. All Rights Reserved. Made with <i class="fas fa-heart"></i> by DK Tech X Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleLogoError() {
+      const img = document.getElementById('logoImage');
+      const fallback = document.querySelector('.fallback-text');
+      if (img) img.style.display = 'none';
+      if (fallback) fallback.style.display = 'flex';
+    }
+
+    const toggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        if (navMenu.style.display === 'flex') {
+          navMenu.style.display = 'none';
+        } else {
+          navMenu.style.display = 'flex';
+          navMenu.style.flexDirection = 'column';
+          navMenu.style.position = 'absolute';
+          navMenu.style.top = '72px';
+          navMenu.style.left = '0';
+          navMenu.style.width = '100%';
+          navMenu.style.background = '#ffffff';
+          navMenu.style.padding = '24px';
+          navMenu.style.boxShadow = '0 15px 30px rgba(0,0,0,0.08)';
+          navMenu.style.zIndex = '999';
+          navMenu.style.gap = '16px';
+        }
+      });
+    }
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.fa-chevron-down');
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          answer.style.display = 'block';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
+  </script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019ed193126070c8a9bc52e4ef88f14b7a48/embed.js'>
+</script>
+</body>
+</html>

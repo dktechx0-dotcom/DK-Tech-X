@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Pricing • DK Tech X | Affordable Technology Solutions</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/Pricing.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-section">
+        <div class="logo-icon">
+          <img src="img/logo.png" alt="DK Tech X Logo" id="logoImage" onerror="handleLogoError()">
+          <span class="fallback-text" style="display: none;">DK</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">DK <span>Tech</span> X</span>
+          <span class="logo-tagline">Digital Excellence</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+            <li><a href="Social-Media.html">Social Media</a></li>
+            <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+            <li><a href="Content-writing.html">Content Writing</a></li>
+          </ul>
+        </li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ PRICING HERO ============ -->
+  <section class="pricing-hero">
+    <div class="container">
+      <span class="hero-badge"><i class="fas fa-tags"></i> Transparent Pricing</span>
+      <h1>Choose Your <span class="highlight">Perfect Plan</span></h1>
+      <p class="hero-sub">From startups to enterprises, we have tailored solutions for every budget and requirement.</p>
+      <div class="billing-toggle">
+        <button class="toggle-option active" onclick="toggleBilling('monthly', this)">Monthly</button>
+        <button class="toggle-option" onclick="toggleBilling('yearly', this)">Yearly <span class="save-badge">Save 20%</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEB DEVELOPMENT PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Web Development</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Custom websites, web applications, and e-commerce solutions.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-code"></i></div>
+          <h3>Starter Website</h3>
+          <span class="category-label">1-Page Business Site</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>749</span><span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1 Pages Website</li>
+            <li><i class="fas fa-check"></i> Contact Section</li>
+            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+            <li><i class="fas fa-check"></i> Domain setup help</li>
+            <li><i class="fas fa-check"></i> Google search Console setup</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Business Pro</h3>
+          <span class="category-label">10-Page Custom Site</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>4,999</span><span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 5 Pages Website</li>
+            <li><i class="fas fa-check"></i> Morden UI design</li>
+            <li><i class="fas fa-check"></i> WhatsApp Integration</li>
+            <li><i class="fas fa-check"></i> Blog Setup</li>
+            <li><i class="fas fa-check"></i> 3 Months Support</li>
+            <li><i class="fas fa-check"></i> Contact form</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>E-Commerce</h3>
+          <span class="category-label">Online Store</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>9,999</span><span class="price-period">/project</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 250+ Products</li>
+            <li><i class="fas fa-check"></i> Payment Gateway</li>
+            <li><i class="fas fa-check"></i> Inventory Management</li>
+            <li><i class="fas fa-check"></i> Order Tracking</li>
+            <li><i class="fas fa-check"></i> 6 Months Support</li>
+            <li><i class="fas fa-check"></i> Security Setup</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL MARKETING PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Digital Marketing</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">SEO, social media, and comprehensive digital marketing solutions.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-search"></i></div>
+          <h3>SEO Starter</h3>
+          <span class="category-label">Basic Optimization</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>499</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Keyword Research</li>
+            <li><i class="fas fa-check"></i> On-Page SEO</li>
+            <li><i class="fas fa-check"></i> Monthly Report</li>
+            <li><i class="fas fa-check"></i> 5 Keywords Target</li>
+            <li><i class="fas fa-check"></i> Google Analytics</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>SEO Professional</h3>
+          <span class="category-label">Advanced Optimization</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>999</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 20 Keywords Target</li>
+            <li><i class="fas fa-check"></i> Technical SEO</li>
+            <li><i class="fas fa-check"></i> Content Strategy</li>
+            <li><i class="fas fa-check"></i> Link Building</li>
+            <li><i class="fas fa-check"></i> Weekly Reports</li>
+            <li><i class="fas fa-check"></i> Competitor Analysis</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Full Marketing</h3>
+          <span class="category-label">SEO + Social + PPC</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>4,999</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited Keywords</li>
+            <li><i class="fas fa-check"></i> Social Media Management</li>
+            <li><i class="fas fa-check"></i> PPC Campaigns</li>
+            <li><i class="fas fa-check"></i> Email Marketing</li>
+            <li><i class="fas fa-check"></i> Daily Reports</li>
+            <li><i class="fas fa-check"></i> Dedicated Manager</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL MEDIA PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Social Media</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Grow your brand presence across all social platforms.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fab fa-facebook"></i></div>
+          <h3>Social Basic</h3>
+          <span class="category-label">2 Platforms</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>899</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 8 Posts/Month</li>
+            <li><i class="fas fa-check"></i> Basic Graphics</li>
+            <li><i class="fas fa-check"></i> Hashtag Research</li>
+            <li><i class="fas fa-check"></i> Monthly Analytics</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fab fa-instagram"></i></div>
+          <h3>Social Growth</h3>
+          <span class="category-label">4 Platforms</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>1,499</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 20 Posts/Month</li>
+            <li><i class="fas fa-check"></i> Custom Graphics</li>
+            <li><i class="fas fa-check"></i> Story Creation</li>
+            <li><i class="fas fa-check"></i> Community Management</li>
+            <li><i class="fas fa-check"></i> Weekly Reports</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-video"></i></div>
+          <h3>Social Pro</h3>
+          <span class="category-label">All Platforms + Reels</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>4,499</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 30 Posts/Month</li>
+            <li><i class="fas fa-check"></i> Video Reels</li>
+            <li><i class="fas fa-check"></i> Influencer Outreach</li>
+            <li><i class="fas fa-check"></i> Paid Ad Management</li>
+            <li><i class="fas fa-check"></i> Daily Engagement</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PPC ADVERTISING PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">PPC Advertising</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Maximize ROI with targeted pay-per-click campaigns.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fab fa-google"></i></div>
+          <h3>Google Ads Starter</h3>
+          <span class="category-label">Search Campaigns</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>999</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Keyword Research</li>
+            <li><i class="fas fa-check"></i> Ad Copywriting</li>
+            <li><i class="fas fa-check"></i> Landing Page Setup</li>
+            <li><i class="fas fa-check"></i> Monthly Optimization</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-ad"></i></div>
+          <h3>Multi-Platform Ads</h3>
+          <span class="category-label">Google + Meta</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>2,899</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Google & Meta Ads</li>
+            <li><i class="fas fa-check"></i> A/B Testing</li>
+            <li><i class="fas fa-check"></i> Conversion Tracking</li>
+            <li><i class="fas fa-check"></i> Bi-Weekly Reports</li>
+            <li><i class="fas fa-check"></i> Remarketing Setup</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Enterprise PPC</h3>
+          <span class="category-label">All Platforms</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>3,499</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Google, Meta, LinkedIn</li>
+            <li><i class="fas fa-check"></i> Advanced Analytics</li>
+            <li><i class="fas fa-check"></i> Dedicated Strategist</li>
+            <li><i class="fas fa-check"></i> Weekly Optimizations</li>
+            <li><i class="fas fa-check"></i> ROAS Tracking</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENT WRITING PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Content Writing</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">High-quality content that engages and converts.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-pen"></i></div>
+          <h3>Blog Writing</h3>
+          <span class="category-label">4 Articles/Month</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>399</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1000 Words Each</li>
+            <li><i class="fas fa-check"></i> SEO Optimized</li>
+            <li><i class="fas fa-check"></i> Topic Research</li>
+            <li><i class="fas fa-check"></i> 1 Revision/Article</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">POPULAR</div>
+          <div class="pricing-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Content Pro</h3>
+          <span class="category-label">10 Articles/Month</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>749</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1500 Words Each</li>
+            <li><i class="fas fa-check"></i> SEO + Keywords</li>
+            <li><i class="fas fa-check"></i> Meta Descriptions</li>
+            <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+            <li><i class="fas fa-check"></i> Content Calendar</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-book"></i></div>
+          <h3>Enterprise Content</h3>
+          <span class="category-label">Unlimited Content</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>1,999</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited Articles</li>
+            <li><i class="fas fa-check"></i> Whitepapers & eBooks</li>
+            <li><i class="fas fa-check"></i> Press Releases</li>
+            <li><i class="fas fa-check"></i> Dedicated Writer</li>
+            <li><i class="fas fa-check"></i> Priority Delivery</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOUD & CYBERSECURITY PRICING ============ -->
+  <section class="pricing-category">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><span class="highlight">Cloud & Security</span> Plans</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Secure cloud infrastructure and cybersecurity solutions.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Starter</h3>
+          <span class="category-label">Basic Hosting</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>999</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 50GB Storage</li>
+            <li><i class="fas fa-check"></i> SSL Certificate</li>
+            <li><i class="fas fa-check"></i> Daily Backups</li>
+            <li><i class="fas fa-check"></i> CDN Included</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Security Suite</h3>
+          <span class="category-label">Advanced Protection</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>2,299</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Firewall Setup</li>
+            <li><i class="fas fa-check"></i> Malware Scanning</li>
+            <li><i class="fas fa-check"></i> DDoS Protection</li>
+            <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
+            <li><i class="fas fa-check"></i> Monthly Audit</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-outline-pricing">Get Started</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">BEST VALUE</div>
+          <div class="pricing-icon"><i class="fas fa-server"></i></div>
+          <h3>Enterprise Cloud</h3>
+          <span class="category-label">Full Infrastructure</span>
+          <div class="price"><span class="price-amount"><span class="currency">₹</span>4,799</span><span class="price-period">/month</span></div>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited Storage</li>
+            <li><i class="fas fa-check"></i> Advanced Security</li>
+            <li><i class="fas fa-check"></i> Auto Scaling</li>
+            <li><i class="fas fa-check"></i> Disaster Recovery</li>
+            <li><i class="fas fa-check"></i> 24/7 Support</li>
+            <li><i class="fas fa-check"></i> Custom Solutions</li>
+          </ul>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-pricing btn-primary-pricing">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ SECTION ============ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently <span class="highlight">Asked Questions</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">Can I switch plans later? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes, you can upgrade or downgrade your plan at any time. The difference will be prorated.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer custom pricing? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Absolutely! Contact us for enterprise solutions and we'll create a tailored package for your needs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What payment methods do you accept? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We accept all major credit cards, PayPal, bank transfers, and UPI payments.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is there a setup fee? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Setup fees vary by service. Web development projects have a one-time fee; monthly plans include setup.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I cancel anytime? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes, monthly plans can be cancelled anytime. Annual plans have a 30-day money-back guarantee.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer a free trial? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We offer a 7-day free trial for our digital marketing and social media plans. No credit card required.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA SECTION ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Not Sure Which <span class="highlight" style="background: linear-gradient(120deg, #ffffff 0%, #a5b4fc 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Plan is Right</span>?</h2>
+        <p>Schedule a free consultation and our experts will help you choose the perfect solution for your business.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-white"><i class="fas fa-headset"></i> Free Consultation</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevsVT1_gjhevLDXM6GPIzZQlkxAyuDQygQ0I8oDCVUYnGatw/viewform?usp=publish-editor" class="btn-outline-white"><i class="fas fa-envelope"></i> Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>DK <span class="highlight">Tech</span> X</h3>
+          <p>Empowering the world with next-generation technology solutions. Innovation is our DNA, excellence is our standard.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="SEO-optimaization.html">SEO Optimization</a></li>
+            <li><a href="PPC-advertising.html">PPC Advertising</a></li>
+            <li><a href="Content-writing.html">Content Writing</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> dktechx0@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +91 9528095030</li>
+            <li><i class="fas fa-map-marker-alt"></i> Meeut, India</li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DK Tech X. All Rights Reserved. Made with <i class="fas fa-heart"></i> by DK Tech X Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/pricing.js">
+    
+  </script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019ed193126070c8a9bc52e4ef88f14b7a48/embed.js'>
+</script>
+</body>
+</html>
